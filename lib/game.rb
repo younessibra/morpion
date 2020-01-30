@@ -53,6 +53,7 @@ class Game
   end
 
   def game_end
+    @cpt = 0
     puts "Voici le schéma final"
     @board.show
     puts "Si vous ne le voulez pas rejouer, tapez 'n'. Sinon tapez n'importe quoi"
