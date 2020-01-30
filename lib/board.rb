@@ -2,17 +2,12 @@ require_relative 'boardcase'
 require_relative 'player'
 
 class Board
-  #TO DO : la classe a 1 attr_accessor : un array/hash qui contient les BoardCases.
-  #Optionnellement on peut aussi lui rajouter un autre sous le nom @count_turn pour compter le nombre de coups joué
 
   attr_accessor :cases
 
 
   def initialize
-    @cases = [BoardCase.new("A1"), BoardCase.new("A2"), BoardCase.new("A3"), BoardCase.new("B1"), BoardCase.new("B2") ,BoardCase.new("B3"), BoardCase.new("C1"), BoardCase.new("C2"), BoardCase.new("C3")]
-    #TO DO :
-    #Quand la classe s'initialize, elle doit créer 9 instances BoardCases
-    #Ces instances sont rangées dans un array/hash qui est l'attr_accessor de la classe
+    @cases = [BoardCase.new(), BoardCase.new(), BoardCase.new(), BoardCase.new(), BoardCase.new() ,BoardCase.new(), BoardCase.new(), BoardCase.new(), BoardCase.new()]
   end
 
   def convert(choice)
@@ -43,9 +38,6 @@ class Board
       return play_turn(player)
     end
     @cases[choice].value = player.value
-    #TO DO : une méthode qui :
-    #1) demande au bon joueur ce qu'il souhaite faire
-    #2) change la BoardCase jouée en fonction de la valeur du joueur (X ou O)
   end
 
   def show
@@ -77,6 +69,5 @@ class Board
       then return true
     end
     return false
-    #TO DO : une méthode qui vérifie le plateau et indique s'il y a un vainqueur ou match nul
   end
 end
